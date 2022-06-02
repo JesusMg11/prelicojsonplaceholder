@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" style="text-align: center;">
+            <h2>JSONPlaceHolder</h2>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <div class="row" style="text-align: center;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary" (click)="irSiguienteInterfaz()">IR SIGUIENTE INTERFAZ</button>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <hr>
+    <div class="row">
+        <!--Usuarios del sistema-->
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align: center;">
+                <h2>POSTS</h2>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered order-table bg-light" id="tablaParticipantes">
+                <thead class="table-active table-dark">
+                    <tr>
+                        <th style="font-weight: bold;">UserID</th>
+                        <th style="font-weight: bold;">ID</th>
+                        <th style="font-weight: bold;">Title</th>
+                        <th style="font-weight: bold;">Body</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of posts | paginate: { id: 'tb1', itemsPerPage: 10, currentPage: p}" style="color: black;text-align: justify;">
+                        <td>{{item.userId}}</td>
+                        <td>{{item.id}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.body}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pagination-controls (pageChange)="p = $event"  previousLabel="" nextLabel="" id='tb1'></pagination-controls>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--Usuarios del sistema-->
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align: center;">
+                <h2>PHOTOS</h2>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered order-table bg-light" id="tablaParticipantes">
+                <thead class="table-active table-dark">
+                    <tr>
+                        <th style="font-weight: bold;">AlbumID</th>
+                        <th style="font-weight: bold;">ID</th>
+                        <th style="font-weight: bold;">Title</th>
+                        <th style="font-weight: bold;">Photo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of photos | paginate: { id: 'tb2', itemsPerPage: 10, currentPage: p2}" style="color: black;text-align: justify;">
+                        <td>{{item.albumId}}</td>
+                        <td>{{item.id}}</td>
+                        <td>{{item.title}}</td>
+                        <td><img src="{{item.thumbnailUrl}}"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <pagination-controls (pageChange)="p2 = $event"  previousLabel="" nextLabel="" id='tb2'></pagination-controls>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--Usuarios del sistema-->
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align: center;">
+                <h2>PHOTOS</h2>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered order-table bg-light" id="tablaParticipantes">
+                <thead class="table-active table-dark">
+                    <tr>
+                        <th style="font-weight: bold;">ID</th>
+                        <th style="font-weight: bold;">Name</th>
+                        <th style="font-weight: bold;">Username</th>
+                        <th style="font-weight: bold;">Email</th>
+                        <th style="font-weight: bold;">Address</th>
+                        <th style="font-weight: bold;">Phone</th>
+                        <th style="font-weight: bold;">Website</th>
+                        <th style="font-weight: bold;">Company</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of users | paginate: { id: 'tb3', itemsPerPage: 10, currentPage: p3}" style="color: black;text-align: justify;">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.username}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.address.street}} {{item.address.suite}} {{item.address.city}} {{item.address.zipcode}} (lat: {{item.address.geo.lat}}, 
+                            lng: {{item.address.geo.lng}})</td>
+                        <td>{{item.phone}}</td>    
+                        <td>{{item.website}}</td>
+                        <td>{{item.company.name}}, {{item.company.catchPhrase}}, {{item.company.bs}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <pagination-controls (pageChange)="p3 = $event"  previousLabel="" nextLabel="" id='tb3'></pagination-controls>
+        </div>
+    </div>
+
+</div>

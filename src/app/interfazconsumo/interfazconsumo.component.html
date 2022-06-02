@@ -1,0 +1,174 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4" style="text-align: center;">
+            <h2>JSONPlaceHolder</h2>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <div class="row" style="text-align: center;">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary" (click)="irSiguienteInterfaz()">REGRESAR</button>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <hr>
+
+    <div class="row">
+
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align: center;">
+                <h2>GET /posts/1</h2>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-primary" (click)="getConsulta1()">EJECUTAR</button>
+            </div>
+        </div>
+
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <textarea class="form-control" id="textAreaExample" rows="10" disabled>
+                {
+                    id: {{consulta1.id}},
+                    title: '{{consulta1.title}}',
+                    body: '{{consulta1.body}}',
+                    userId: {{consulta1.userId}}
+                }
+            </textarea>
+        </div>
+        <div class="col-md-2"></div>
+        
+    </div>
+    <hr>
+    <div class="row">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align: center;">
+                <h2>POST /posts</h2>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-primary" (click)="postConsulta2()">EJECUTAR</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="form-label mb-4">
+                    <input type="text" class="form-control" placeholder="Title"
+                        [(ngModel)]="datosConsulta2.title" name="title_con" required />
+                </div>
+                <div class="form-label mb-4">
+                    <input type="text" class="form-control" placeholder="Body"
+                        [(ngModel)]="datosConsulta2.body" name="body_con" required />
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <textarea class="form-control" id="textAreaExample2" rows="10" disabled>
+                {
+                    id: {{consulta2.id}}
+                }
+            </textarea>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align: center;">
+                <h2>PUT /posts/1</h2>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-primary" (click)="putConsulta3()">EJECUTAR</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="form-label mb-4">
+                    <input type="text" class="form-control" placeholder="Title"
+                        [(ngModel)]="datosConsulta3.title" name="title_con" required />
+                </div>
+                <div class="form-label mb-4">
+                    <input type="text" class="form-control" placeholder="Body"
+                        [(ngModel)]="datosConsulta3.body" name="body_con" required />
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <textarea class="form-control" id="textAreaExample3" rows="10" disabled>
+                {
+                    id: {{consulta3.id}}
+                }
+            </textarea>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align: center;">
+                <h2>PATCH /posts/1</h2>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-primary" (click)="patchConsulta4()">EJECUTAR</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="form-label mb-4">
+                    <input type="text" class="form-control" placeholder="Title"
+                        [(ngModel)]="datosConsulta4.title" name="title_con" required />
+                </div>
+                <div class="form-label mb-4">
+                    <input type="text" class="form-control" placeholder="Body"
+                        [(ngModel)]="datosConsulta4.body" name="body_con" required />
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <textarea class="form-control" id="textAreaExample4" rows="10" disabled>
+                {
+                    id: {{consulta4.id}},
+                    title: '{{consulta4.title}}',
+                    body: '{{consulta4.body}}',
+                    userId: {{consulta4.userId}}
+                }
+            </textarea>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="text-align: center;">
+                <h2>DELETE /posts/1</h2>
+            </div>
+            <div class="col-sm-4">
+                <button type="button" class="btn btn-primary" (click)="deleteConsulta5()">EJECUTAR</button>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <textarea class="form-control" id="textAreaExample5"  *ngIf=" bandera == false" rows="10" disabled>
+            </textarea>
+            <textarea class="form-control" id="textAreaExample5"  *ngIf=" bandera" rows="10" disabled>
+                HECHO
+            </textarea>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+    <br>
+</div>
